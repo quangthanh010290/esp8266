@@ -23,7 +23,7 @@
 // Set these to run example.
 #define FIREBASE_HOST "iotdev-6b58b.firebaseio.com"
 #define FIREBASE_AUTH "5zg8yd7bazlRj0heqBZvrduyyjykvshtRPCbjlYh"
-#define WIFI_SSID "AutonomousSale"
+#define WIFI_SSID "AutonomousDevice"
 #define WIFI_PASSWORD "autonomous123"
 String chipId = "123";
 byte mac[6];
@@ -75,54 +75,21 @@ void setup() {
   Serial.print("Chip ID ");
   Serial.print(ESP.getChipId());
 }
-void getFirebaseData(){  
-  FirebaseObject obj = Firebase.get("123/states");
-  if (Firebase.failed() == true) {
-    Serial.print("Reading Error: ");
-    Serial.println(Firebase.error());
-  }
-  else{
-    bool led1 = obj.getBool("001");
-    bool led2 = obj.getBool("002");
-    bool led3 = obj.getBool("003");
-    if (firstTime == true){
-      firstTime = false;
-      l1 = led1;
-      l2 = led2;
-      l3 = led3;
-      digitalWrite(LED_BUILTIN,!l1);
-      Serial.print("Led1:");
-      Serial.println(led1);
-      Serial.print("Led2:");
-      Serial.println(led2);
-      Serial.print("Led3:");
-      Serial.println(led3);
-      
-    }
-    else{
-      if (l1 != led1){
-        Serial.print("Led1:");
-        Serial.println(led1);
-        l1 = led1;   
-        digitalWrite(LED_BUILTIN,!l1); 
-      }  
-      if (l2 != led2){
-        Serial.print("Led2:");
-        Serial.println(led2);
-        l2 = led2;    
-      }
-      if (l3 != led3){
-        Serial.print("Led3:");
-        Serial.println(led3);
-        l3 = led3;            
-      }
-    }
-    }
- 
+void setFirebaseBoll(const String path, bool _data) {
+	Firebase.setBool(path, _data);
+	if (Firebase.failed()) 
+	{
+		Serial.println("Push Bool Failed");
+	}
+	else
+	{
+		Serial.print("Set Bool Success,data writen:");
+		Serial.println(Firebase.getBool(path));
+
+	}
+
 }
-
 void loop() {
-  getFirebaseData();
-
-//  delay(500);
+	setFirebaseBoll("123/states/005",true);
+	delay(500);
 }
