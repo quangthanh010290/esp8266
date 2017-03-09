@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test_setBool.ino" />
+    <None Include="Test_setJson.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.Test_setBool.vsarduino.h">
+    <ClInclude Include="__vm\.Test_setJson.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
