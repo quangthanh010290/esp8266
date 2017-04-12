@@ -8,3 +8,6 @@ http://www.espressif.com/en/support/download/overview?keys=&field_type_tid%5B%5D
 
 # Pinout
 ![alt tag](https://s17.postimg.org/qvpai7mrj/esp8266_esp12e_horizontal-01.png)
+# Reference
+
+![alt tag](https://internetofhomethings.com/homethings/wp-content/uploads/2015/03/schematicNEW.jpg)
