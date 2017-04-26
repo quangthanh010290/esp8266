@@ -43,11 +43,11 @@ ESP8266_SPIDownload_com_port1:COM6
 ESP8266_SPIDownload_autostart1:0
 ESP8266_SPIDownload_path6#empty;;;
 ESP8266_SPIDownload_path4#selected;C:\Users\Thanh\Desktop\eagle.flash.bin;0x00000;
-ESP8266_SPIDownload_path5#selected;C:\Users\Thanh\Desktop\eagle.irom0text.bin;0x02000;
-ESP8266_SPIDownload_path2#selected;C:\Users\Thanh\Desktop\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\blank.bin;0xFE000;
-ESP8266_SPIDownload_path3#selected;C:\Users\Thanh\Desktop\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\blank.bin;0x1FE000;
-ESP8266_SPIDownload_path0#selected;C:\Users\Thanh\Desktop\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\blank.bin;0x1fb000;
-ESP8266_SPIDownload_path1#selected;C:\Users\Thanh\Desktop\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\esp_init_data_default.bin;0x1fc000;
+ESP8266_SPIDownload_path5#selected;C:\Users\Thanh\Desktop\Firebase_get_setBool.ino.bin;0x20000;
+ESP8266_SPIDownload_path2#empty;C:\DATA\git\esp8266\doc\FromEspressif\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\blank.bin;0xFE000;
+ESP8266_SPIDownload_path3#empty;C:\DATA\git\esp8266\doc\FromEspressif\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\blank.bin;0x1FE000;
+ESP8266_SPIDownload_path0#empty;C:\DATA\git\esp8266\doc\FromEspressif\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\blank.bin;0x1fb000;
+ESP8266_SPIDownload_path1#empty;C:\DATA\git\esp8266\doc\FromEspressif\esp8266_nonos_sdk_v2.0.0_16_08_10\ESP8266_NONOS_SDK\bin\esp_init_data_default.bin;0x1fc000;
 ESP8266_SPIDownload_SPIAUTOSET:0
 ESP8266_SPIDownload_SPISPEED:0
 ESP8266_SPIDownload_FLASHSIZE:0
