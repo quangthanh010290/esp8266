@@ -1,1 +1,3 @@
-# My Arduino
+# Firebase Arduino
+https://github.com/firebase/firebase-arduino
+
