@@ -8,11 +8,11 @@
 
 void setup() {
 	// put your setup code here, to run once:
-	Serial.begin(115200);
-
+	Serial1.begin(9600);
+	Serial1.println("Printed From Uart1");
 	//WiFiManager
 	//Local intialization. Once its business is done, there is no need to keep it around
-	WiFiManager wifiManager;
+	//WiFiManager wifiManager;
 	//reset saved settings
 	//wifiManager.resetSettings();
 
@@ -23,16 +23,18 @@ void setup() {
 	//if it does not connect it starts an access point with the specified name
 	//here  "AutoConnectAP"
 	//and goes into a blocking loop awaiting configuration
-	wifiManager.autoConnect("AutoConnectAP");
+	//wifiManager.autoConnect("AutoConnectAP");
 	//or use this for auto generated name ESP + ChipID
 	//wifiManager.autoConnect();
 
 
 	//if you get here you have connected to the WiFi
-	Serial.println("connected...yeey :)");
+	//Serial1.println("connected...yeey :)");
 }
 
 void loop() {
 	// put your main code here, to run repeatedly:
+	Serial1.println("OK");
+	delay(400);
 
 }
