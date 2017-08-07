@@ -11,3 +11,4 @@ http://www.espressif.com/en/support/download/overview?keys=&field_type_tid%5B%5D
 # Reference
 
 ![alt tag](https://internetofhomethings.com/homethings/wp-content/uploads/2015/03/schematicNEW.jpg)
+![alt tag](http://esp8266.ru/wp-content/uploads/scheme-full-autoprog1-1024x586.jpg)
