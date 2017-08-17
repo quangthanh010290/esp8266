@@ -1,0 +1,23 @@
+language: c
+before_install:
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16"
+  - sleep 3
+  - export DISPLAY=:1.0
+  - wget http://downloads.arduino.cc/arduino-1.8.3-linux64.tar.xz
+  - tar xf arduino-1.8.3-linux64.tar.xz
+  - sudo mv arduino-1.8.3 $HOME/arduino_ide
+  - export PATH="$HOME/arduino_ide:$PATH"
+install: 
+  - arduino --pref "boardsmanager.additional.urls=https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.js$
+  - arduino --install-boards esp8266:esp8266
+  - arduino --install-library "WiFiManager"
+  - arduino --install-library "Servo"
+  - wget https://github.com/googlesamples/firebase-arduino/archive/master.zip
+  - unzip master.zip
+  - mv firebase-arduino-master $HOME/arduino_ide/libraries
+script:
+  - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/AutoConnect/AutoConnect.ino
+notifications:
+  email:
+    on_success: change
+    on_failure: chang
