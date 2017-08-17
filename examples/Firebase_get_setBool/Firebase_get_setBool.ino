@@ -23,14 +23,15 @@
 // Set these to run example.
 #define FIREBASE_HOST "iotdev-6b58b.firebaseio.com"
 #define FIREBASE_AUTH "5zg8yd7bazlRj0heqBZvrduyyjykvshtRPCbjlYh"
-#define WIFI_SSID "AutonomousSale"
-#define WIFI_PASSWORD "autonomous123"
+#define WIFI_SSID "BSMART"
+#define WIFI_PASSWORD "bsmart123456"
 String chipId = "123";
 byte mac[6];
 bool l1 = false;
 bool l2 = false;
 bool l3 = false;
 bool firstTime = true;
+bool button_status = false;
 void wifiSetup(){
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("connecting");
@@ -70,31 +71,62 @@ void setup() {
   Serial.begin(9600);
   wifiSetup();
   firebaseSetup();
-  pinMode(LED_BUILTIN,OUTPUT);
-  digitalWrite(LED_BUILTIN,HIGH);
+  pinMode(D7,OUTPUT);
+  pinMode(D1,OUTPUT);
+  pinMode(D6,INPUT);
+  digitalWrite(D7,LOW);
+  digitalWrite(D1,LOW);
   Serial.print("Chip ID ");
   Serial.println(ESP.getChipId());
+  button_status = (bool)digitalRead(D6);
+  Serial.print("Button: ");
+  Serial.println(button_status);
 }
+void getInput(void)
+{
+  bool x = (bool)digitalRead(D6);
+  if (x != button_status)
+  {
+    button_status = x;
+    Serial.print("Button: ");
+    Serial.println(button_status);
+    if(x == false)
+    {
+      digitalWrite(D7,LOW);
+      digitalWrite(D1,HIGH);
+    }
+    else
+    {
+      digitalWrite(D7,HIGH);
+      digitalWrite(D1,LOW);
+    }
+  }
+  
+}
+
 void getFirebaseData(){  
-  FirebaseObject obj = Firebase.get("123/states");
+  FirebaseObject obj = Firebase.get("rooms");
   if (Firebase.failed() == true) {
     Serial.print("Reading Error: ");
     Serial.println(Firebase.error());
   }
   else{
-    bool led1 = obj.getBool("001");
+    bool led1 = obj.getBool("kichen_room");
     if (firstTime == true){
       firstTime = false;
       l1 = led1;
-      digitalWrite(LED_BUILTIN,!l1);
+      digitalWrite(D7,!l1);
+      digitalWrite(D1,l1);
       Serial.print("Led1:");
+      Serial.println(led1);
     }
     else{
       if (l1 != led1){
         Serial.print("Led1:");
         Serial.println(led1);
         l1 = led1;   
-        digitalWrite(LED_BUILTIN,!l1);         
+        digitalWrite(D7,!l1); 
+        digitalWrite(D1,l1);         
       }
     }
     }
@@ -102,7 +134,9 @@ void getFirebaseData(){
 }
 
 void loop() {
+  getInput();
   getFirebaseData();
 
 //  delay(500);
 }
+
