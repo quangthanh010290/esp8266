@@ -19,6 +19,7 @@ before_install:
 install:  
   
   - arduino --install-library "WiFiManager"
+  - arduino --install-library "Servo"
 script:
   - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/AutoConnect/AutoConnect.ino
 notifications:
