@@ -7,13 +7,13 @@ before_install:
   - tar xf arduino-1.8.3-linux64.tar.xz
   - mv arduino-1.8.3 $HOME/arduino_ide
   - export PATH="$HOME/arduino_ide:$PATH"
-install: 
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.js" --save-prefs
-  - arduino --install-boards esp8266:esp8266
-  - arduino --install-library "WiFiManager"
   - wget https://github.com/googlesamples/firebase-arduino/archive/master.zip
   - unzip master.zip
   - mv firebase-arduino-master $HOME/arduino_ide/libraries
+install:  
+  - arduino --install-boards esp8266:esp8266
+  - arduino --install-library "WiFiManager"
 script:
   - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/AutoConnect/AutoConnect.ino
 notifications:
