@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# esp8266
+
+# esp8266 [![Build Status](https://travis-ci.org/quangthanh010290/esp8266.svg?branch=master)](https://travis-ci.org/quangthanh010290/esp8266)
 Boards manager link: http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 Documentation: http://esp8266.github.io/Arduino/versions/2.3.0/
@@ -50,4 +50,4 @@ http://www.espressif.com/en/support/download/overview?keys=&field_type_tid%5B%5D
   static const uint8_t D9   = 3;
   
   static const uint8_t D10  = 1;'
->>>>>>> ba38acf2149efa2fbcc973a2775a194a8678e5fd
+
