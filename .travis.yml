@@ -11,7 +11,6 @@ install:
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.js"
   - arduino --install-boards esp8266:esp8266
   - arduino --install-library "WiFiManager"
-  - arduino --install-library "Servo"
   - wget https://github.com/googlesamples/firebase-arduino/archive/master.zip
   - unzip master.zip
   - mv firebase-arduino-master $HOME/arduino_ide/libraries
