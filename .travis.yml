@@ -8,7 +8,7 @@ before_install:
   - mv arduino-1.8.3 $HOME/arduino_ide
   - export PATH="$HOME/arduino_ide:$PATH"
 install: 
-  - arduino --pref "boardsmanager.additional.urls=https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.js$
+  - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.js"
   - arduino --install-boards esp8266:esp8266
   - arduino --install-library "WiFiManager"
   - arduino --install-library "Servo"
