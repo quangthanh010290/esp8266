@@ -11,8 +11,9 @@ before_install:
   - wget https://github.com/googlesamples/firebase-arduino/archive/master.zip
   - unzip master.zip
   - mv firebase-arduino-master $HOME/arduino_ide/libraries
+  - arduino --install-boards esp8266:esp8266
 install:  
-  #- arduino --install-boards esp8266:esp8266
+  
   - arduino --install-library "WiFiManager"
 script:
   - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/AutoConnect/AutoConnect.ino
