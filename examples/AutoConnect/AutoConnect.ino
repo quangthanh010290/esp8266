@@ -25,7 +25,7 @@ void setup() {
 	//and goes into a blocking loop awaiting configuration
 	//wifiManager.autoConnect("AutoConnectAP");
 	//or use this for auto generated name ESP + ChipID
-	//wifiManager.autoConnect();
+	wifiManager.autoConnect();
 
 
 	//if you get here you have connected to the WiFi

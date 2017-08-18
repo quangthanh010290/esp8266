@@ -1,10 +1,10 @@
-#include <ESP8266WiFi.h>;
+#include <ESP8266WiFi.h>
 
 void setup() {
   Serial.begin(115200);
   delay(10);
 
-  //WiFi.mode(WIFI_STA);
+  WiFi.mode(WIFI_STA);
   delay(500);
   WiFi.setAutoConnect(false);
   WiFi.beginSmartConfig();
