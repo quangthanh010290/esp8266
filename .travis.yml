@@ -18,6 +18,7 @@ install:
 script:
   - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/AutoConnect/AutoConnect.ino
   - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/Firebase_get_setBool/Firebase_get_setBool.ino
+  - arduino  --verify --board  esp8266:esp8266:nodemcuv2:FlashSize=4M3M,CpuFrequency=80 $PWD/examples/eeprom_demo/eeprom_demo.ino
 notifications:
   email:
     on_success: change
