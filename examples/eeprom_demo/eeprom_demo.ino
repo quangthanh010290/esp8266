@@ -20,9 +20,6 @@ void setup() {
 	  WiFi.begin();
   }
 
-
-  
-  
   while (WiFi.status() != WL_CONNECTED) 
   {
     delay(500);

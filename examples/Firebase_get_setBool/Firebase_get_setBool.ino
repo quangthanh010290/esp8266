@@ -22,9 +22,9 @@
 
 // Set these to run example.
 #define FIREBASE_HOST "iotdev-6b58b.firebaseio.com"
-#define FIREBASE_AUTH "5zg8yd7bazlRj0heqBZvrduyyjykvshtRPCbjlYh"
-#define WIFI_SSID "BSMART"
-#define WIFI_PASSWORD "bsmart123456"
+#define FIREBASE_AUTH "5zg8yd7bazlRj0heqBZvrduyyjykvshtRPCbjlYh" 
+#define WIFI_SSID "Oc Gao 2017"
+#define WIFI_PASSWORD "250508th@ah"
 String chipId = "123";
 byte mac[6];
 bool l1 = false;
@@ -106,37 +106,38 @@ void getInput(void)
 
 void getFirebaseData(){  
   FirebaseObject obj = Firebase.get("rooms");
-  if (Firebase.failed() == true) {
-    Serial.print("Reading Error: ");
-    Serial.println(Firebase.error());
+  if (Firebase.failed() != true)
+  {
+	  bool led1 = obj.getBool("kichen_room");
+	  if (firstTime == true) {
+		  firstTime = false;
+		  l1 = led1;
+		  digitalWrite(D7, !l1);
+		  digitalWrite(D1, l1);
+		  Serial.print("Led1:");
+		  Serial.println(led1);
+	  }
+	  else {
+		  if (l1 != led1) {
+			  Serial.print("Led1:");
+			  Serial.println(led1);
+			  l1 = led1;
+			  digitalWrite(D7, !l1);
+			  digitalWrite(D1, l1);
+		  }
+	  }
   }
-  else{
-    bool led1 = obj.getBool("kichen_room");
-    if (firstTime == true){
-      firstTime = false;
-      l1 = led1;
-      digitalWrite(D7,!l1);
-      digitalWrite(D1,l1);
-      Serial.print("Led1:");
-      Serial.println(led1);
-    }
-    else{
-      if (l1 != led1){
-        Serial.print("Led1:");
-        Serial.println(led1);
-        l1 = led1;   
-        digitalWrite(D7,!l1); 
-        digitalWrite(D1,l1);         
-      }
-    }
-    }
- 
+  else
+  {
+    Serial.println("Reading Fail");
+  }
 }
 
 void loop() {
-  getInput();
+  //getInput();
   getFirebaseData();
 
-//  delay(500);
+  delay(500);
 }
+
 

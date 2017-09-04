@@ -23,8 +23,8 @@
 // Set these to run example.
 #define FIREBASE_HOST "iotdev-6b58b.firebaseio.com"
 #define FIREBASE_AUTH "5zg8yd7bazlRj0heqBZvrduyyjykvshtRPCbjlYh"
-#define WIFI_SSID "AutonomousDevice"
-#define WIFI_PASSWORD "autonomous123"
+#define WIFI_SSID "Oc Gao 2017"
+#define WIFI_PASSWORD "250508th@ah"
 String chipId = "123";
 byte mac[6];
 bool l1 = false;
