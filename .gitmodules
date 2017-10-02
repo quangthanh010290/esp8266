@@ -1,3 +1,6 @@
 [submodule "ArduinoServo"]
 	path = ArduinoServo
 	url = https://github.com/quangthanh010290/ArduinoServo.git
+[submodule "firebase-arduino"]
+	path = firebase-arduino
+	url = https://github.com/firebase/firebase-arduino.git
