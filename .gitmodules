@@ -4,3 +4,15 @@
 [submodule "firebase-arduino"]
 	path = firebase-arduino
 	url = https://github.com/firebase/firebase-arduino.git
+[submodule "esp8266"]
+	path = esp8266
+	url = https://github.com/quangthanh010290/esp8266.git
+[submodule "RF24"]
+	path = RF24
+	url = https://github.com/nRF24/RF24.git
+[submodule "RF24Network"]
+	path = RF24Network
+	url = https://github.com/nRF24/RF24Network.git
+[submodule "RF24Mesh"]
+	path = RF24Mesh
+	url = https://github.com/nRF24/RF24Mesh.git
