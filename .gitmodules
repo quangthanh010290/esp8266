@@ -1,0 +1,3 @@
+[submodule "ArduinoServo"]
+	path = ArduinoServo
+	url = https://github.com/quangthanh010290/ArduinoServo.git
