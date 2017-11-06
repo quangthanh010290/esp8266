@@ -16,3 +16,6 @@
 [submodule "RF24Mesh"]
 	path = RF24Mesh
 	url = https://github.com/nRF24/RF24Mesh.git
+[submodule "MQTT.js"]
+	path = MQTT.js
+	url = https://github.com/mqttjs/MQTT.js.git
