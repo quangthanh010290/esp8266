@@ -1,9 +1,0 @@
-[submodule "libraries/ESPAsyncWebServer"]
-	path = libraries/ESPAsyncWebServer
-	url = https://github.com/me-no-dev/ESPAsyncWebServer.git
-[submodule "libraries/ESPAsyncTCP"]
-	path = libraries/ESPAsyncTCP
-	url = https://github.com/me-no-dev/ESPAsyncTCP.git
-[submodule "libraries/firebase-arduino"]
-	path = libraries/firebase-arduino
-	url = https://github.com/firebase/firebase-arduino.git
