@@ -94,5 +94,5 @@ extern "C" void __cxa_pure_virtual() {;}
 #define interrupts() sei()
 #define noInterrupts() cli()
 
-#include "mlabvietSwitch.ino"
+#include "SmartGarden.ino"
 #endif
