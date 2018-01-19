@@ -28,58 +28,58 @@
 byte mac[6];
 void wifiSetup(){
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("connecting");
+  Serial1.print("connecting");
   while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
+    Serial1.print(".");
     delay(500);
   }
-  Serial.println();
-  Serial.print("connected: ");
-  Serial.println(WiFi.localIP()); 
-  Serial.print("MAC: "); 
+  Serial1.println();
+  Serial1.print("connected: ");
+  Serial1.println(WiFi.localIP()); 
+  Serial1.print("MAC: "); 
   WiFi.macAddress(mac);
-  Serial.print("MAC: ");
-  Serial.print(mac[5],HEX);
-  Serial.print(":");
-  Serial.print(mac[4],HEX);
-  Serial.print(":");
-  Serial.print(mac[3],HEX);
-  Serial.print(":");
-  Serial.print(mac[2],HEX);
-  Serial.print(":");
-  Serial.print(mac[1],HEX);
-  Serial.print(":");
-  Serial.println(mac[0],HEX);
+  Serial1.print("MAC: ");
+  Serial1.print(mac[5],HEX);
+  Serial1.print(":");
+  Serial1.print(mac[4],HEX);
+  Serial1.print(":");
+  Serial1.print(mac[3],HEX);
+  Serial1.print(":");
+  Serial1.print(mac[2],HEX);
+  Serial1.print(":");
+  Serial1.print(mac[1],HEX);
+  Serial1.print(":");
+  Serial1.println(mac[0],HEX);
 }
 void firebaseSetup(){
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
     if (Firebase.failed() == true) {
-    Serial.print("Setup Error: ");
-    Serial.println(Firebase.error());
+    Serial1.print("Setup Error: ");
+    Serial1.println(Firebase.error());
   }   
   else
   {
-    Serial.println("Setup OK: ");
+    Serial1.println("Setup OK: ");
   }
-	Firebase.stream("/123/states/thanh");
+	Firebase.stream("/devices/4425788");
 	if (Firebase.failed())
 	{
-		Serial.println("Setup stream fail");
+		Serial1.println("Setup stream fail");
 	}
 	else
 	{
-		Serial.println("Setup Stream success");
+		Serial1.println("Setup Stream success");
 	}
 
 }
 void setup() {
-  Serial.begin(9600);
+  Serial1.begin(9600);
   wifiSetup();
   firebaseSetup();
   pinMode(LED_BUILTIN,OUTPUT);
   digitalWrite(LED_BUILTIN,HIGH);
-  Serial.print("Chip ID ");
-  Serial.println(ESP.getChipId());
+  Serial1.print("Chip ID ");
+  Serial1.println(ESP.getChipId());
 }
 void firebaseStream()
 {
@@ -88,8 +88,8 @@ void firebaseStream()
 		FirebaseObject event = Firebase.readEvent();
 		String eventType = event.getString("type");
 		eventType.toLowerCase();
-		Serial.print("event:");
-		Serial.println(eventType);
+		Serial1.print("event:");
+		Serial1.println(eventType);
 
 	}
 
@@ -100,9 +100,13 @@ void loop() {
 		FirebaseObject event = Firebase.readEvent();
 		String eventType = event.getString("type");
 		//eventType.toLowerCase();
-		Serial.print("event:");
-		Serial.println(eventType);
+		Serial1.print("event:");
+		Serial1.println(eventType);
+		Serial1.print("data: ");
+		Serial1.println(event.getString("data"));
+		
 
 	}
+	
 	delay(100);
 }

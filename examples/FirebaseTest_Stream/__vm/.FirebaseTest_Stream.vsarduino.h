@@ -16,7 +16,7 @@
 #define ICACHE_FLASH
 #define F_CPU 80000000L
 #define LWIP_OPEN_SRC
-#define ARDUINO 10801
+#define ARDUINO 10804
 #define ARDUINO_ESP8266_NODEMCU
 #define ARDUINO_ARCH_ESP8266
 #define ESP8266
@@ -94,5 +94,5 @@ extern "C" void __cxa_pure_virtual() {;}
 #define interrupts() sei()
 #define noInterrupts() cli()
 
-#include "Test_Stream.ino"
+#include "FirebaseTest_Stream.ino"
 #endif

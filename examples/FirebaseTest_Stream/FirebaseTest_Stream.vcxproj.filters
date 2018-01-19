@@ -15,11 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test_Stream.ino" />
+    <None Include="$safeprojectname$.ino" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="__vm\.Test_Stream.vsarduino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
+ 
 </Project>
