@@ -43,13 +43,13 @@ http://www.espressif.com/en/support/download/overview?keys=&field_type_tid%5B%5D
 
   static const uint8_t D5   = GPIO14;
   
-  static const uint8_t D6   = 12;
+  static const uint8_t D6   = GPIO12;
   
-  static const uint8_t D7   = 13;
+  static const uint8_t D7   = GPIO13;
   
-  static const uint8_t D8   = 15;
+  static const uint8_t D8   = GPIO15;
   
-  static const uint8_t D9   = 3;
+  static const uint8_t D9   = GPIO3;
   
-  static const uint8_t D10  = 1;'
+  static const uint8_t D10  = GPIO1;'
 
