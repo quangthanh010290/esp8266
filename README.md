@@ -31,17 +31,17 @@ http://www.espressif.com/en/support/download/overview?keys=&field_type_tid%5B%5D
 ![alt tag](http://esp8266.ru/wp-content/uploads/scheme-full-autoprog1-1024x586.jpg)
 # Pin Map
 
-  static const uint8_t D0   = 16;
+  static const uint8_t D0   = GPIO16;
 
-  static const uint8_t D1   = 5;
+  static const uint8_t D1   = GPIO5;
 
-  static const uint8_t D2   = 4;
+  static const uint8_t D2   = GPIO4;
 
-  static const uint8_t D3   = 0;
+  static const uint8_t D3   = GPIO0;
 
-  static const uint8_t D4   = 2;
+  static const uint8_t D4   = GPIO2;
 
-  static const uint8_t D5   = 14;
+  static const uint8_t D5   = GPIO14;
   
   static const uint8_t D6   = 12;
   
